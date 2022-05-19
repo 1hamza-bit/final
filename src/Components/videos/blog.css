@@ -1,0 +1,30 @@
+.single{
+    background: url(https://cache.desktopnexus.com/thumbseg/25/25727-bigthumbnail.jpg) no-repeat;
+    background-size: cover;
+    padding: 10%;
+}
+.side{
+    background-color: rgb(23, 23, 23);
+    padding: 5%;
+}
+
+
+
+h1{
+    
+    text-align: center;
+  }
+  .title{
+  padding-top: 2rem;
+  color:#4C74C9;
+   
+  }
+  .nav h2{
+    padding-left: 7%;
+  }
+  p{
+  line-height: 2rem;
+  }
+  span{
+    color:#00a1e1;
+  }

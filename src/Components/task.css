@@ -1,0 +1,26 @@
+.sider{
+    padding: 3%;
+}
+
+.textarea .MuiFilledInput-root{
+    height: 100px;
+    width: 100%;
+}
+
+.center{
+    padding-left: 10% !important;
+    padding-top: 5% !important;
+}
+
+.form{
+    border: 1px solid white;
+    box-shadow: rgba(90, 110, 130, 0.2) 0px 8px 24px;
+    border-radius: 5px;
+    padding: 5%;
+}
+
+.pen{
+   padding-top: 0% !important;
+
+}
+
