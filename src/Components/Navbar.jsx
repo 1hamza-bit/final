@@ -16,10 +16,10 @@ const Navbar = (props) => {
       <nav className="main-nav">
         {/* 1st logo part  */}
         <div className="logo">
-          <h2>
+        <Link to="/ "> <h2>
             <span>R</span>ein
             <span>V</span>okes
-          </h2>
+          </h2></Link>
         </div>
 
         {/* 2nd menu part  */}
@@ -28,9 +28,7 @@ const Navbar = (props) => {
             showMediaIcons ? "menu-link mobile-menu-link" : "menu-link"
           }>
           <ul>
-            <li>
-              <Link to="/admin">Home</Link>
-            </li>
+           
             <li>
               <Link to="/Videos ">Movies</Link>
             </li>
@@ -38,7 +36,7 @@ const Navbar = (props) => {
               <Link to="/Magazines">Digital magazines</Link>
             </li>
             <li>
-              <Link to="/">Screenplays</Link>
+              <Link to="/sc">Screenplays</Link>
             </li>
             <li>
               <Link to="/">Other media</Link>

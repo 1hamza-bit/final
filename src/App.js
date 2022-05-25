@@ -24,7 +24,9 @@ import UploadVideos from './Components/User/upload video';
 import UploadMagazines from './Components/User/uploadmags';
 import UScreenplays from './Components/User/uploadsc';
 import Sc from './Components/videos/sc';
-import Singlevid from './Components/videos/singlevid'
+import Singlevid from './Components/videos/singlevid';
+import fileDownload from 'js-file-download'
+import axios from 'axios'
 
 function App() {
   
@@ -36,7 +38,16 @@ function App() {
       var decoded = jwt_decode(token);
       setuser(decoded);
     } catch {}
-  }, [])
+  }, []);
+
+  const handleDownload = () => {
+    axios.get('https://res.cloudinary.com/ds2zccx0d/video/upload/v1652789967/DEV/tdiw2bgn9klh2yln6nof.mp4', {
+      responseType: 'blob',
+    })
+    .then((res) => {
+      fileDownload(res.data, 'fil.mp4')
+    })
+  }
   
 
   return (
@@ -63,11 +74,11 @@ function App() {
           <Route exact path="/Videos" element={<Vids/>}/>
           <Route exact path="/logout" element={<Logout/>}/>
           <Route exact path="/sc" element={<Sc/>}/>
-         
           <Route exact path="/User_Upload_Video" element={user ? <UploadVideos user={user}/> : <Navigate to="/" replace />}/>
           <Route exact path="/User_Upload_Magazine" element={user ? <UploadMagazines user={user}/> : <Navigate to="/" replace />}/>
           <Route exact path="/User_Upload_Screenplay" element={user ? <UScreenplays user={user}/> : <Navigate to="/" replace />}/>
         </Routes>
+        {/* <button onClick={handleDownload}>Download Image</button> */}
     </Router>
   )
 }

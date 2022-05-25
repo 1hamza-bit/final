@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Footer.css'
-import {Grid,Divider,List,ListItem,ListItemButton,ListItemText} from '@mui/material';
+import {Grid,Divider,List,ListItem,ListItemButton,ListItemText,Button,Link} from '@mui/material';
 
 
 class Footer extends Component {
@@ -17,38 +17,14 @@ class Footer extends Component {
             <span>V</span>okes
           </h2>
         </div>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                              when an unknown printer took a galley of type and scrambled 
-                            it to make a type specimen book. It has survived not only five centuries</p>
+                        <p>Reinvokes was created to give a platform to independent filmmakers and emerging studio's to share their work.
+                           Created by Kinoverse Corp it is dedicated to showcasing the amazing work and talents
+                            of Kinoverse and KV flow users.</p>
                     </Grid>
                     <Grid item sm={12} md={6} lg={4} >
-                        <h2>MENU</h2>
+                        <h2>Want to submit your film or media?</h2>
                         <Divider />
-      <nav aria-label="secondary mailbox folders">
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="Movies" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
-              <ListItemText primary="Digital Magazines" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="Screenplays" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
-              <ListItemText primary="Other Media" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
+                    <Button style={{margin: "1%"}} variant="contained" href="/register"> Apply here -> </Button>
                     </Grid>
                     <Grid item sm={12} md={6} lg={4}>
                         <h2>About</h2>
@@ -68,7 +44,7 @@ class Footer extends Component {
         <Divider />
         <h2>Contact us</h2>
         <br/>
-        <p><b> Contact no</b>: 390385938</p>
+        <p><b> Email us at</b>: Info@reinvokes.com</p>
         
                     </Grid>
                     

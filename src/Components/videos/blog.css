@@ -2,14 +2,29 @@
     background: url(https://cache.desktopnexus.com/thumbseg/25/25727-bigthumbnail.jpg) no-repeat;
     background-size: cover;
     padding: 10%;
+    margin-top: 2% !important;
 }
 .side{
     background-color: rgb(23, 23, 23);
     padding: 5%;
 }
 
+.list{
+  
+}
 
-
+@media only screen and (max-width: 600px) {
+ .list{
+   display: flex !important;
+   
+ }
+ .single{
+   display: none;
+ }
+ .side{
+  margin-top: 15%;
+ }
+}
 h1{
     
     text-align: center;
@@ -23,7 +38,7 @@ h1{
     padding-left: 7%;
   }
   p{
-  line-height: 2rem;
+  line-height: 3rem;
   }
   span{
     color:#00a1e1;

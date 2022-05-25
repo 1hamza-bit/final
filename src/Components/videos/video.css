@@ -14,14 +14,15 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .player{
-    width: 50% !important;
+  .blog{
+    width: 30em !important;
+  height: 40em;
   }
 }
 .blog{
   position: relative;
-  width: 22em !important;
-  height: 30em;
+  width: 32em !important;
+  height: 36em;
   
 
   background-size: 22em 30em;
@@ -30,6 +31,25 @@
   -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
   overflow: hidden;
 }
+.slidercontainer{
+  padding: 2%;
+}
+.slides{
+  padding: 3%;
+}
+@media only screen and (max-width: 600px) {
+  .slides{
+    padding: 10%;
+  }
+  .player1{
+    width: 100% !important;
+  }
+}
+.css-honmcm-MuiGrid-root{
+  margin-left: 0px !important;
+  padding-right: 10%;
+}
+
 .blog *{
   position: relative;
   z-index: 2;

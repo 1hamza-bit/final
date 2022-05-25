@@ -6,7 +6,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import Footer from '../Footer/Footer'
+import Navbar from '../Navbar'
  
 function Item() {
 
@@ -60,7 +61,7 @@ function Item() {
     };
 
   return (
-   <div style={{padding: "3%"}}>
+   <div className='slides'>
        
        
       <Slider {...settings}>

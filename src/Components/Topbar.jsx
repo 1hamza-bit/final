@@ -74,7 +74,7 @@ export default function Topbar(props) {
               <Button style={{margin: "1%"}} variant="contained" href="/login">
 <PersonOutlineIcon/>  Login
 </Button>
-<Button style={{margin: "1%"}} variant="contained" href="#contained-buttons">
+<Button style={{margin: "1%"}} variant="contained" href="/register">
 <PersonAddIcon />  Register
 </Button>
             </>

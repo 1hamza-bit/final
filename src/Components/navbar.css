@@ -6,9 +6,6 @@
   box-sizing: border-box;
 }
 
-.slick-list {
-  overflow: visible !important;
-}
 
 html {
   font-size: 72.5%;
