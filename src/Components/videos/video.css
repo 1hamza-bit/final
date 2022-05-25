@@ -18,6 +18,9 @@
     width: 30em !important;
   height: 40em;
   }
+  .slick-list{
+    display: inline !important;
+  }
 }
 .blog{
   position: relative;
