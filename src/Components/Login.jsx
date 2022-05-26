@@ -1,5 +1,3 @@
-
-
 import { Alert, Button, TextField } from '@mui/material'
 import axios from 'axios';
 import React, { useState } from 'react'
@@ -53,16 +51,7 @@ function Login() {
         } catch (error) {
             seterror(error.response.data);
         }
-    };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+    }; 
 
   return (
     <ThemeProvider theme={theme}>
@@ -101,7 +90,7 @@ function Login() {
             </Typography>
             <form onSubmit={submitHandler} style={{backgroundColor:'white',height:'100vh',color:'white',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
                 {error && <Alert severity="error">{error}</Alert>} <br />
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            <Box sx={{ mt: 1 }}>
               <TextField
                 margin="normal"
                 required
@@ -111,7 +100,7 @@ function Login() {
                 name="email"
                 autoComplete="email"
                 autoFocus
-                onChange={(e) => setemail(e.target.value)} required
+                onChange={(e) => setemail(e.target.value)}
                 style={{backgroundColor: "rgba(255,255,255,0.3)", color: "white"}}
               />
               <TextField
@@ -123,7 +112,7 @@ function Login() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                onChange={(e) => setpass(e.target.value)} required
+                onChange={(e) => setpass(e.target.value)}
                 style={{backgroundColor: "rgba(255,255,255,0.3)", color: "white"}}
               />
               <FormControlLabel

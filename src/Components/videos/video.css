@@ -26,14 +26,13 @@
   position: relative;
   width: 32em !important;
   height: 36em;
-  
-
   background-size: 22em 30em;
   box-shadow: 3px 3px 20px rgba(0,0,0,0.5);
   margin: auto;
-  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
   overflow: hidden;
 }
+
+
 .slidercontainer{
   padding: 2%;
 }

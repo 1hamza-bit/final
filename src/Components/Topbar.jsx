@@ -2,12 +2,14 @@ import * as React from 'react';
 import "./navbar.css";
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
-import {Box,Button} from '@mui/material';
+import {Box,Button,MenuItem,Menu} from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import { useNavigate } from 'react-router-dom';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -52,12 +54,33 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Topbar(props) {
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = (route) => {
+    setAnchorEl(null);
+    navigate(route)
+  };
+
+  let navigate = useNavigate();
+
+  const [quer, setquer] = React.useState(null);
+
+  const submithandler = (e) => {
+    e.preventDefault();
+    navigate(`/search/${quer}`)
+  }
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
     
-          <Search style={{height:40,display:'flex',alignItems:'center'}}>
+        <form onSubmit={submithandler}>
+          <Search onChange={(e) => setquer(e.target.value)} style={{height:40,display:'flex',alignItems:'center'}}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -66,15 +89,38 @@ export default function Topbar(props) {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+          </form>
           {
             props.user ?
-            <Button varian="contained">{props.user.username}</Button>
+            <div>
+              <Button id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}>{props.user.username} <ArrowDropDownIcon/></Button>
+              <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        {props.user && props.user.role==="admin" ? <MenuItem onClick={() => handleClose("/admin")}>Admin</MenuItem> : ""}
+        <MenuItem onClick={() => handleClose("/User_Upload_Video")}>Add Movies</MenuItem>
+        <MenuItem onClick={() => handleClose("/User_Upload_Screenplay")}>Add Screenplays</MenuItem>
+        <MenuItem onClick={() => handleClose("/User_Upload_Magazine")}>Add Magazines</MenuItem>
+        <MenuItem onClick={() => handleClose("/User_Upload_Other")}>Add Others</MenuItem>
+        <MenuItem onClick={() => handleClose("/logout")}>Logout</MenuItem>
+      </Menu>
+            </div>
             :
             <>
-              <Button style={{margin: "1%"}} variant="contained" href="/login">
+              <Button style={{margin: "1%"}} variant="contained" onClick={() => navigate('/login')}>
 <PersonOutlineIcon/>  Login
 </Button>
-<Button style={{margin: "1%"}} variant="contained" href="/register">
+<Button style={{margin: "1%"}} variant="contained" onClick={() => navigate('/register')}>
 <PersonAddIcon />  Register
 </Button>
             </>

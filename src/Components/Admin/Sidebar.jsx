@@ -58,6 +58,12 @@ function ResponsiveDrawer(props) {
             </ListItemIcon>
             <ListItemText primary="Add Magazines" />
           </ListItem>
+          <ListItem button onClick={() => navigate('/add_others')}>
+            <ListItemIcon>
+              <MovieIcon />
+            </ListItemIcon>
+            <ListItemText primary="Add Others" />
+          </ListItem>
           <ListItem button onClick={() => navigate('/users')}>
             <ListItemIcon>
               <GroupIcon />
@@ -81,6 +87,12 @@ function ResponsiveDrawer(props) {
               <NewspaperIcon />
             </ListItemIcon>
             <ListItemText primary="Manage Magazines" />
+          </ListItem>
+          <ListItem button onClick={() => navigate('/manage_others')}>
+            <ListItemIcon>
+              <MovieIcon />
+            </ListItemIcon>
+            <ListItemText primary="Manage Others" />
           </ListItem>
           <ListItem button onClick={() => navigate('/add_categories')}>
             <ListItemIcon>

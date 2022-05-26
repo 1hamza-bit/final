@@ -11,6 +11,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import ClearIcon from '@mui/icons-material/Clear';
 import Footer from '../Footer/Footer'
 import Navbar from '../Navbar';
+import fileDownload from 'js-file-download'
 
 
 class Sc extends Component {
@@ -18,6 +19,31 @@ class Sc extends Component {
     screenplays: "",
     dataToDownload: [],
    
+  }
+
+  
+  
+
+
+  componentDidMount = () => {
+    axios.get(`https://videos-backends.herokuapp.com/screenplays`, {
+
+    })
+      .then(res => {
+        const screenplays = res.data;
+        this.setState({ screenplays });
+        console.log("screenplays", res.data);
+
+      })
+  }
+
+  handleDownload = (file) => {
+    axios.get('https://videos-backends.herokuapp.com' + file, {
+      responseType: 'blob',
+    })
+    .then((res) => {
+      fileDownload(res.data, file)
+    })
   }
 
   columns = [
@@ -52,28 +78,13 @@ class Sc extends Component {
     {
       name: 'File',
       selector: 'file',
-      cell: row => (<a href="https://videos-backends.herokuapp.com/uploads/kebab.PNG" download>download</a>)
+      cell: row => (<Button variant='contained' onClick={file =>  this.handleDownload(file)}>File</Button>)
       // cell: row => (<span>{row.title}</span>)
 
 
     },
   ]
   data = [];
-  
-
-
-  componentDidMount = () => {
-    axios.get(`https://videos-backends.herokuapp.com/screenplays`, {
-
-    })
-      .then(res => {
-        const screenplays = res.data;
-        this.setState({ screenplays });
-        console.log("screenplays", res.data);
-
-      })
-  }
-
 
 
   render() {

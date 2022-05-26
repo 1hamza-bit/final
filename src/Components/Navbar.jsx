@@ -39,7 +39,7 @@ const Navbar = (props) => {
               <Link to="/sc">Screenplays</Link>
             </li>
             <li>
-              <Link to="/">Other media</Link>
+              <Link to="/Others">Other media</Link>
             </li>
             
           </ul>
