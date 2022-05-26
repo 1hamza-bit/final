@@ -85,9 +85,10 @@ function Login() {
             <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
               <LockOutlinedIcon />
             </Avatar>
-            <Typography style={{color: ""}} component="h1" variant="h5">
+            <Typography style={{color: "black"}} component="h1" variant="h5">
               Sign in
             </Typography>
+            <h2 style={{color: "black"}} >Log In to your approved reinvokes account</h2>
             <form onSubmit={submitHandler} style={{backgroundColor:'white',height:'100vh',color:'white',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
                 {error && <Alert severity="error">{error}</Alert>} <br />
             <Box sx={{ mt: 1 }}>

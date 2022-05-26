@@ -79,9 +79,11 @@ export default function SignUp() {
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography style={{color: "black"}}  component="h1" variant="h5">
             Sign up
           </Typography>
+          <h2 style={{color: "black"}} >Sign up to approve get approved account , from where you can upload videos</h2>
+          <h3 style={{color: "black"}} ><b>Note:</b>  You must have an active kinoverse account to get approved</h3>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
