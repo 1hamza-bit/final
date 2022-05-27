@@ -19,7 +19,7 @@ import Navbar from '../Navbar'
     const id = params.id;
 
     const fetchOthers = async() => {
-      const ress = await axios.get('https://others-backends.herokuapp.com/others/' + id);
+      const ress = await axios.get('https://videos-backends.herokuapp.com/others/' + id);
       setothers(ress.data);
     };
 

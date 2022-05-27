@@ -8,6 +8,7 @@ import {Grid} from '@mui/material';
 import Footer from '../Footer/Footer'
 import Navbar from '../Navbar';
 import { useNavigate } from 'react-router-dom';
+import ReactPlayer from 'react-player';
 
 function Otherz() {
 
@@ -30,6 +31,7 @@ function Otherz() {
   const fetchOthers = async () => {
     const response = await axios.get('https://videos-backends.herokuapp.com/others');
     setothers(response.data)
+    console.log(response.data[0].video)
   };
 
   useEffect(() => {
@@ -83,15 +85,19 @@ function Otherz() {
 
         {
           others ? 
-          others.map(others => 
+          others.map(other => 
             <Grid item sm={12} md={6} lg={4}  >
-            <div key={others._id} onClick={() => navigate(`/Others/${others._id}`)}>
+            <div key={others._id} onClick={() => navigate(`/Others/${other._id}`)}>
             
             <div className='whole'>
-      <div onMouseEnter={play} onMouseLeave={stop} className="wrapper">
-        <video loop ref={video} className='video' muted src={others.video}></video>
+      <div className="wrapper">
+      <ReactPlayer className="player" url={other.video}
+                    
+                    height='' 
+                    controls={true}
+                    />
       </div>
-      <div className="text">{others.title}</div>
+      <div className="text">{other.title}</div>
     </div>            </div>
             </Grid>
             )

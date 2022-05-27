@@ -77,7 +77,7 @@ function App() {
           <Route exact path="/Others/:id" element={<Singleother/>}/>
 
           <Route exact path="/logout" element={<Logout/>}/>
-          <Route exact path="/sc" element={<Sc/>}/>
+          <Route exact path="/sc" element={<Sc user={user}/>}/>
           <Route exact path="/User_Upload_Video" element={user ? <UploadVideos user={user}/> : <Navigate to="/" replace />}/>
           <Route exact path="/User_Upload_Magazine" element={user ? <UploadMagazines user={user}/> : <Navigate to="/" replace />}/>
           <Route exact path="/User_Upload_Screenplay" element={user ? <UScreenplays user={user}/> : <Navigate to="/" replace />}/>

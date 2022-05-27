@@ -37,13 +37,13 @@ class Sc extends Component {
       })
   }
 
-  handleDownload = (file) => {
-    axios.get('https://videos-backends.herokuapp.com' + file, {
+  handleDownload = () => {
+    axios.get('https://videos-backends.herokuapp.com/uploads/Downloaded%20from%20THEMELOCK.COM.txt', {
       responseType: 'blob',
     })
     .then((res) => {
-      fileDownload(res.data, file)
-    })
+      fileDownload(res.data, 'hello')
+     })
   }
 
   columns = [
@@ -78,7 +78,7 @@ class Sc extends Component {
     {
       name: 'File',
       selector: 'file',
-      cell: row => (<Button variant='contained' onClick={file =>  this.handleDownload(file)}>File</Button>)
+      cell: row => (<Button variant='contained' onClick={this.handleDownload}>File</Button>)
       // cell: row => (<span>{row.title}</span>)
 
 
@@ -92,7 +92,7 @@ class Sc extends Component {
     
     return (
       <>
-      <Navbar/>
+      <Navbar user={this.props.user}/>
       <div style={{padding: "5%"}}>
      
        
