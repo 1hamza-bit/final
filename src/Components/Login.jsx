@@ -15,6 +15,8 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Footer from './Footer/Footer'
+import Navbar from './Navbar'
 
 function Copyright(props) {
   return (
@@ -54,8 +56,10 @@ function Login() {
     }; 
 
   return (
+    <>
+    <Navbar/>
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh' }}>
+      <Grid container component="main" sx={{ height: '100vh',  marginBottom:"5%" }}>
         <CssBaseline />
         <Grid
           item
@@ -63,7 +67,7 @@ function Login() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random)',
+            backgroundImage: 'url(https://wallpaperaccess.com/full/2314950.jpg)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -71,7 +75,7 @@ function Login() {
             backgroundPosition: 'center',
           }}
         />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <Grid item xs={12} sm={8} md={5}  elevation={6} square>
           <Box
             sx={{
               my: 8,
@@ -82,14 +86,14 @@ function Login() {
               color: "rgba(255,255,255,0.5)"
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <Avatar sx={{ m: 1,  }}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography style={{color: "black"}} component="h1" variant="h5">
               Sign in
             </Typography>
             <h2 style={{color: "black"}} >Log In to your approved reinvokes account</h2>
-            <form onSubmit={submitHandler} style={{backgroundColor:'white',height:'100vh',color:'white',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
+            <form onSubmit={submitHandler} style={{color:'white',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
                 {error && <Alert severity="error">{error}</Alert>} <br />
             <Box sx={{ mt: 1 }}>
               <TextField
@@ -147,7 +151,10 @@ function Login() {
           </Box>
         </Grid>
       </Grid>
+
     </ThemeProvider>
+    <Footer/>
+    </>
   );
 }
 export default Login

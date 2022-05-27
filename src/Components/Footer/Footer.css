@@ -1,8 +1,8 @@
 .footer{
     padding: 6%;
     font-size: 1.5rem;
-    background: rgb(6,6,6);
-background: linear-gradient(180deg, rgba(6,6,6,1) 0%, rgba(20,22,24,1) 57%, rgba(20,20,20,1) 100%);
+    background: rgb(0,0,0);
+
 color: dimgray;
 
 }
